@@ -1,5 +1,13 @@
 package main
 
+import (
+	"log"
+	"net/http"
+
+	"suraj.com/web_server/api"
+)
+
 func main() {
-	server := api.initServer()
+	s := api.NewServer()
+	log.Fatal(http.ListenAndServe(":8080", s))
 }
